@@ -123,13 +123,15 @@ rollback where applicable.
 
 - **EDIT950** is a working native macOS application; the repository documents
   the current source build and release status.
-- **FIND950** is working and currently installed from source with Xcode; a
-  packaged public release is still to come.
-- **PLAY950** is a working development VST3 project built from source; a
-  packaged public plug-in release is still to come.
+- **FIND950 0.2.3** is available as a
+  [public Universal macOS app](https://github.com/richiewarburton/FIND950/releases/latest).
+- **PLAY950 0.13.0** is available as a
+  [public Universal macOS VST3](https://github.com/richiewarburton/PLAY950/releases/latest).
 
-All three target macOS 14 or later. See each product README for exact build,
-installation and current-scope details.
+All three target macOS 14 or later. The public FIND950 and PLAY950 community
+builds support Apple Silicon and Intel, are ad-hoc signed and are not
+Apple-notarized. See each product README and release page for exact installation
+and current-scope details.
 
 ## Why three applications?
 
