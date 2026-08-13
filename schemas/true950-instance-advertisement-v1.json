@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e45recordings.com/schemas/akai-tools/true950-instance-advertisement-v1.json",
+  "title": "PLAY950 instance advertisement v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol", "protocolVersion", "messageType", "instanceID", "updatedAt", "expiresAt", "productVersion", "hostName", "acceptedProtocolVersions"],
+  "properties": {
+    "protocol": { "const": "com.e45recordings.akai-tools" },
+    "protocolVersion": { "const": 1 },
+    "messageType": { "const": "true950.instance.advertisement" },
+    "instanceID": { "type": "string", "format": "uuid" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "expiresAt": { "type": "string", "format": "date-time" },
+    "productVersion": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "hostName": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "contextLabel": { "type": "string", "maxLength": 256 },
+    "currentSourceLabel": { "type": "string", "maxLength": 256 },
+    "currentProgram": { "type": "string", "maxLength": 64 },
+    "acceptedProtocolVersions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": { "type": "integer", "minimum": 1 }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "protocol": "com.e45recordings.akai-tools",
+  "protocolVersion": 1,
+  "messageType": "aim.export-program.request",
+  "requestID": "6c860590-c45c-4809-bb23-d3233153f2ae",
+  "createdAt": "2026-08-10T12:05:00Z",
+  "sender": {
+    "productID": "com.e45recordings.FIND950",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "response": {
+    "path": "/Users/example/Library/Caches/950TOOLS/6c860590-c45c-4809-bb23-d3233153f2ae/response.json",
+    "expiresAt": "2026-08-10T12:35:00Z"
+  },
+  "source": {
+    "path": "/Users/example/S950 Library/COLLECTION.img",
+    "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "byteSize": 819200,
+    "modifiedAt": "2026-08-10T11:45:00Z"
+  },
+  "program": {
+    "volumePath": "/disk0/A/BREAKS",
+    "directoryIndex": 7,
+    "filename": "AMEN.P9",
+    "internalName": "AMEN"
+  },
+  "observedDependencies": [
+    {
+      "directoryIndex": 8,
+      "filename": "AMEN.S9",
+      "internalName": "AMEN"
+    }
+  ],
+  "openInTRUE950AfterExport": true
+}

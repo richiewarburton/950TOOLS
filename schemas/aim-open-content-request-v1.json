@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e45recordings.com/schemas/akai-tools/aim-open-content-request-v1.json",
+  "title": "EDIT950 open content request v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol", "protocolVersion", "messageType", "requestID", "createdAt", "sender", "source", "program"],
+  "properties": {
+    "protocol": { "const": "com.e45recordings.akai-tools" },
+    "protocolVersion": { "const": 1 },
+    "messageType": { "const": "aim.open-content.request" },
+    "requestID": { "type": "string", "format": "uuid" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "sender": { "$ref": "common-definitions-v1.json#/$defs/sender" },
+    "source": { "$ref": "common-definitions-v1.json#/$defs/source" },
+    "program": { "$ref": "common-definitions-v1.json#/$defs/nativeProgram" }
+  }
+}

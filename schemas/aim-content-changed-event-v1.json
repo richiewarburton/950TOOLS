@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e45recordings.com/schemas/akai-tools/aim-content-changed-event-v1.json",
+  "title": "EDIT950 content changed event v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol", "protocolVersion", "messageType", "requestID", "createdAt", "sender", "path", "oldSHA256", "newSHA256", "changes"],
+  "properties": {
+    "protocol": { "const": "com.e45recordings.akai-tools" },
+    "protocolVersion": { "const": 1 },
+    "messageType": { "const": "aim.content-changed.event" },
+    "requestID": { "type": "string", "format": "uuid" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "sender": { "$ref": "common-definitions-v1.json#/$defs/sender" },
+    "path": { "type": "string", "minLength": 1, "maxLength": 4096, "pattern": "^/" },
+    "oldSHA256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "newSHA256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "changes": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "entryType", "volumePath", "filename"],
+        "properties": {
+          "kind": { "enum": ["added", "removed", "renamed", "modified"] },
+          "entryType": { "enum": ["program", "sample", "other"] },
+          "volumePath": { "type": "string", "minLength": 1, "maxLength": 1024 },
+          "directoryIndex": { "type": "integer", "minimum": 1 },
+          "filename": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "previousFilename": { "type": "string", "minLength": 1, "maxLength": 64 }
+        }
+      }
+    }
+  }
+}

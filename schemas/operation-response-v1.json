@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e45recordings.com/schemas/akai-tools/operation-response-v1.json",
+  "title": "950TOOLS operation response v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol", "protocolVersion", "messageType", "requestID", "createdAt", "sender", "status", "operationType"],
+  "properties": {
+    "protocol": { "const": "com.e45recordings.akai-tools" },
+    "protocolVersion": { "const": 1 },
+    "messageType": { "const": "operation.response" },
+    "requestID": { "type": "string", "format": "uuid" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "sender": { "$ref": "common-definitions-v1.json#/$defs/sender" },
+    "status": { "enum": ["accepted", "completed", "failed", "rejected"] },
+    "operationType": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "summary": { "type": "string", "maxLength": 1024 },
+    "errorCode": { "type": "string", "maxLength": 128 },
+    "details": { "type": "object", "maxProperties": 64 },
+    "result": { "type": "object", "maxProperties": 64 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "enum": ["failed", "rejected"] } } },
+      "then": {
+        "required": ["errorCode", "summary"],
+        "properties": {
+          "errorCode": true,
+          "summary": true
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": { "const": "completed" },
+          "operationType": { "const": "aim.export-program" }
+        },
+        "required": ["status", "operationType"]
+      },
+      "then": {
+        "required": ["result"],
+        "properties": {
+          "result": { "$ref": "common-definitions-v1.json#/$defs/aimExportProgramResult" }
+        }
+      }
+    }
+  ]
+}

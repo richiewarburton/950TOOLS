@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e45recordings.com/schemas/akai-tools/common-definitions-v1.json",
+  "title": "950TOOLS protocol v1 common definitions",
+  "$defs": {
+    "sender": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["productID", "version"],
+      "properties": {
+        "productID": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "version": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "build": { "type": "string", "maxLength": 64 }
+      }
+    },
+    "responseTransport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "expiresAt"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1, "maxLength": 4096, "pattern": "^/" },
+        "expiresAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1, "maxLength": 4096, "pattern": "^/" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "byteSize": { "type": "integer", "minimum": 1, "maximum": 34359738368 },
+        "modifiedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "nativeProgram": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["volumePath", "directoryIndex", "filename"],
+      "properties": {
+        "volumePath": { "type": "string", "minLength": 1, "maxLength": 1024, "pattern": "^/" },
+        "directoryIndex": { "type": "integer", "minimum": 1, "maximum": 65535 },
+        "filename": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "internalName": { "type": "string", "maxLength": 64 }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filename"],
+      "properties": {
+        "directoryIndex": { "type": "integer", "minimum": 1, "maximum": 65535 },
+        "filename": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "internalName": { "type": "string", "maxLength": 64 }
+      }
+    },
+    "aimExportVerification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceSHA256", "destinationSHA256", "sourceUnchanged", "exactDirectoryVerified", "nativeBytesVerified", "backupVerified", "rollbackPerformed", "sourceByteSize", "destinationByteSize", "importedFileCount"],
+      "properties": {
+        "sourceSHA256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "destinationSHA256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "sourceUnchanged": { "type": "boolean" },
+        "exactDirectoryVerified": { "type": "boolean" },
+        "nativeBytesVerified": { "type": "boolean" },
+        "backupVerified": { "type": "boolean" },
+        "rollbackPerformed": { "type": "boolean" },
+        "sourceByteSize": { "type": "integer", "minimum": 1, "maximum": 34359738368 },
+        "destinationByteSize": { "type": "integer", "minimum": 1, "maximum": 34359738368 },
+        "importedFileCount": { "type": "integer", "minimum": 1, "maximum": 129 }
+      }
+    },
+    "aimExportProgramResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["resultingImage", "resolvedVolumePath", "program", "dependencies", "verification", "warnings"],
+      "properties": {
+        "resultingImage": { "$ref": "#/$defs/source" },
+        "resolvedVolumePath": { "type": "string", "minLength": 1, "maxLength": 1024, "pattern": "^/" },
+        "program": { "$ref": "#/$defs/nativeProgram" },
+        "dependencies": {
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/dependency" }
+        },
+        "backupPath": { "type": "string", "minLength": 1, "maxLength": 4096, "pattern": "^/" },
+        "verification": { "$ref": "#/$defs/aimExportVerification" },
+        "warnings": {
+          "type": "array",
+          "maxItems": 64,
+          "items": { "type": "string", "minLength": 1, "maxLength": 1024 }
+        }
+      }
+    },
+    "messageHeader": {
+      "type": "object",
+      "required": ["protocol", "protocolVersion", "messageType", "requestID", "createdAt", "sender"],
+      "properties": {
+        "protocol": { "const": "com.e45recordings.akai-tools" },
+        "protocolVersion": { "const": 1 },
+        "messageType": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "requestID": { "type": "string", "format": "uuid" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "sender": { "$ref": "#/$defs/sender" }
+      }
+    }
+  }
+}

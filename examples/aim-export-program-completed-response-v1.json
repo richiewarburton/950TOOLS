@@ -1,0 +1,52 @@
+{
+  "protocol": "com.e45recordings.akai-tools",
+  "protocolVersion": 1,
+  "messageType": "operation.response",
+  "requestID": "6c860590-c45c-4809-bb23-d3233153f2ae",
+  "createdAt": "2026-08-10T12:15:00Z",
+  "sender": {
+    "productID": "com.e45recordings.EDIT950",
+    "version": "1.8.17",
+    "build": "34"
+  },
+  "status": "completed",
+  "operationType": "aim.export-program",
+  "summary": "EDIT950 exported and verified PROGRAM.P9.",
+  "result": {
+    "resultingImage": {
+      "path": "/Users/example/Exports/PROGRAM.img",
+      "sha256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+      "byteSize": 819200,
+      "modifiedAt": "2026-08-10T12:14:59Z"
+    },
+    "resolvedVolumePath": "/disk0/A/VOLUME 001",
+    "program": {
+      "volumePath": "/disk0/A/VOLUME 001",
+      "directoryIndex": 41,
+      "filename": "PROGRAM.P9",
+      "internalName": "PROGRAM"
+    },
+    "dependencies": [
+      {
+        "directoryIndex": 3,
+        "filename": "SAMPLE.S9",
+        "internalName": "SAMPLE"
+      }
+    ],
+    "verification": {
+      "sourceSHA256": "4193cd19dfe1caca668b5efecf5809a270dea902fcebb73360fb866bb573f003",
+      "destinationSHA256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+      "sourceUnchanged": true,
+      "exactDirectoryVerified": true,
+      "nativeBytesVerified": true,
+      "backupVerified": false,
+      "rollbackPerformed": false,
+      "sourceByteSize": 1638400,
+      "destinationByteSize": 819200,
+      "importedFileCount": 2
+    },
+    "warnings": [
+      "FIND950's observed dependency list was stale; EDIT950 used the current P9 closure."
+    ]
+  }
+}
