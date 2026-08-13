@@ -131,8 +131,8 @@ Existing identifiers remain recognized during migration:
 | EDIT950 | `com.e45recordings.EDIT950` | `com.local.AKAIImageManager` |
 | PLAY950 | `com.e45recordings.play950` | bundle `com.e45recordings.true950`; existing VST3 component UIDs remain stable |
 
-The PLAY950 VST3 component identifiers must not be changed after public release,
-because DAW projects use them to locate the plug-in.
+The published PLAY950 VST3 component identifiers are release-stable and must
+not be changed, because DAW projects use them to locate the plug-in.
 
 ## Dependency policy
 
