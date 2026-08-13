@@ -49,7 +49,10 @@ native relationship from a sample back to every P9 program that uses it.
 ![EDIT950 approved identity](docs/images/edit950.png)
 
 Open one IMG in detail, hear its samples, inspect or edit native program data,
-export WAVs and safely prepare 800 KB or 1.6 MB working images.
+export WAVs and safely prepare 800 KB or 1.6 MB working images. Build new programs,
+Edit existing ones, including bulk KG edits. Create IMGs, samples and programs
+from scratch, import wavs, work on IMGs on your laptop and play them on your 
+sampler later.
 
 ![EDIT950 browsing a native S950 disk image](docs/images/edit950-browser.png)
 
@@ -58,7 +61,9 @@ export WAVs and safely prepare 800 KB or 1.6 MB working images.
 ![PLAY950 approved identity](docs/images/play950.png)
 
 Load an IMG or P9 into the VST3, play its original mapping from MIDI and save the
-required native content with the DAW project for later recall.
+required native content with the DAW project for later recall. Enjoy the 1.6Mb 
+memory constraint. Marvel at the monophonic outputs (and L/R/MIX), all of which
+are perfectly mapped from the original S950 program.
 
 ![PLAY950 loaded with a native program](docs/images/play950-plugin.png)
 
