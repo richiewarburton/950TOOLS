@@ -7,7 +7,7 @@
 <p align="center"><strong>FIND · EDIT · PLAY</strong></p>
 
 [![Contract checks](https://github.com/richiewarburton/950TOOLS/actions/workflows/contracts.yml/badge.svg)](https://github.com/richiewarburton/950TOOLS/actions/workflows/contracts.yml)
-[![MIT License](https://img.shields.io/badge/license-MIT-f3c900.svg)](LICENSE)
+[![PolyForm Internal Use](https://img.shields.io/badge/license-PolyForm%20Internal%20Use-f3c900.svg)](LICENSING.md)
 
 ![The 950TOOLS family](docs/images/950tools-suite.png)
 
@@ -18,7 +18,7 @@ Greaseweazle, a Gotek workflow, or an older disk-imaging setup—the sounds,
 programs, keygroups, tuning and loops are still in those images. The awkward
 part is finding and using them on a modern Mac.
 
-950TOOLS is a set of open-source macOS projects for that job:
+950TOOLS is a set of source-available macOS projects for that job:
 
 - search a folder containing hundreds or thousands of disk images;
 - audition the samples without changing the original IMG files;
@@ -131,11 +131,11 @@ rollback where applicable.
 
 ## Current availability
 
-- **EDIT950 1.8.23** is available as a
+- **EDIT950 1.8.24** is available as a
   [public Universal macOS app](https://github.com/richiewarburton/EDIT950/releases/latest).
-- **FIND950 0.2.4** is available as a
+- **FIND950 0.2.5** is available as a
   [public Universal macOS app](https://github.com/richiewarburton/FIND950/releases/latest).
-- **PLAY950 0.13.1** is available as a
+- **PLAY950 0.13.2** is available as a
   [public Universal macOS VST3](https://github.com/richiewarburton/PLAY950/releases/latest).
 
 All three target macOS 14 or later. The public community builds support Apple
@@ -174,7 +174,13 @@ npm install
 
 ## Licence
 
-The 950TOOLS contracts and documentation are available under the
-[MIT License](LICENSE). Third-party products, formats, trademarks and test media
-retain their respective rights. This is an independent project and is not
-affiliated with or endorsed by Akai Professional.
+Current original 950TOOLS material is source-available under the
+[PolyForm Internal Use License 1.0.0](LICENSE), with
+[additional permission](LICENSING.md) for personal, educational and internal
+professional use—including paid music work. Distributing, bundling, hosting or
+selling the software requires a separate written agreement from Richie
+Warburton. Historical MIT versions retain their earlier terms.
+
+Third-party products, dependencies, formats, trademarks and test media retain
+their respective rights. This is an independent project and is not affiliated
+with or endorsed by Akai Professional.
