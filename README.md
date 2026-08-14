@@ -4,7 +4,7 @@
   <img src="docs/images/950tools-wordmark.png" width="760" alt="950TOOLS">
 </p>
 
-<p align="center"><strong>FIND · EDIT · PLAY</strong></p>
+<p align="center"><strong>FIND · EDIT · PLAY · EDIT AGAIN · PLAY FOR A BIT · FIND AGAIN</strong></p>
 
 [![Contract checks](https://github.com/richiewarburton/950TOOLS/actions/workflows/contracts.yml/badge.svg)](https://github.com/richiewarburton/950TOOLS/actions/workflows/contracts.yml)
 [![PolyForm Internal Use](https://img.shields.io/badge/license-PolyForm%20Internal%20Use-f3c900.svg)](LICENSING.md)
