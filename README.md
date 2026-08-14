@@ -79,6 +79,16 @@ The easiest place to start is **EDIT950** if you have one or two
 images to inspect. Add **FIND950** when you want your whole archive
 to feel searchable. PLAY950 is the DAW instrument side of the workflow.
 
+## User guides
+
+- [FIND950 user guide](https://github.com/richiewarburton/FIND950/blob/main/docs/USER_GUIDE.md)
+  — scan, search, audition and organise an IMG library.
+- [EDIT950 user guide](https://github.com/richiewarburton/EDIT950/blob/main/Documentation/USER_GUIDE.md)
+  — inspect, edit and create IMG, P9 and S9 content.
+- [PLAY950 user guide](https://github.com/richiewarburton/PLAY950/blob/main/docs/USER_GUIDE.md)
+  — install the VST3, load sounds, route outputs and recall them with a DAW
+  project.
+
 ## How to use the 950TOOLS workflow
 
 1. Image the old disks without modifying them.
@@ -121,17 +131,17 @@ rollback where applicable.
 
 ## Current availability
 
-- **EDIT950** is a working native macOS application; the repository documents
-  the current source build and release status.
-- **FIND950 0.2.3** is available as a
+- **EDIT950 1.8.23** is available as a
+  [public Universal macOS app](https://github.com/richiewarburton/EDIT950/releases/latest).
+- **FIND950 0.2.4** is available as a
   [public Universal macOS app](https://github.com/richiewarburton/FIND950/releases/latest).
-- **PLAY950 0.13.0** is available as a
+- **PLAY950 0.13.1** is available as a
   [public Universal macOS VST3](https://github.com/richiewarburton/PLAY950/releases/latest).
 
-All three target macOS 14 or later. The public FIND950 and PLAY950 community
-builds support Apple Silicon and Intel, are ad-hoc signed and are not
-Apple-notarized. See each product README and release page for exact installation
-and current-scope details.
+All three target macOS 14 or later. The public community builds support Apple
+Silicon and Intel, are ad-hoc signed and are not Apple-notarized. See each
+product README and release page for exact installation and current-scope
+details.
 
 ## Why three applications?
 
